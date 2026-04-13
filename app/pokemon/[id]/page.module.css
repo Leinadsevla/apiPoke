@@ -1,0 +1,215 @@
+.contentWrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.actionNav {
+  margin-bottom: 2rem;
+}
+
+.backButton {
+  display: inline-block;
+  background: var(--card-bg);
+  color: var(--foreground);
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 700;
+  box-shadow: var(--card-shadow);
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  transform: translateX(-5px);
+  background: var(--poke-yellow);
+  color: #333;
+}
+
+.detailContainer {
+  background: var(--card-bg);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  position: relative;
+}
+
+.imageColumn {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(230,0,18,0.05) 0%, rgba(59,76,202,0.05) 100%);
+  border-right: 1px solid rgba(0,0,0,0.05);
+}
+
+.mainImageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bgCircle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 50%;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.05);
+}
+
+.mainImage {
+  position: relative;
+  width: 110%;
+  height: 110%;
+  object-fit: contain;
+  z-index: 2;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.types {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.infoColumn {
+  padding: 3rem;
+}
+
+.headerTitle {
+  margin-bottom: 2rem;
+}
+
+.id {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #aaa;
+  display: block;
+}
+
+.name {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: capitalize;
+  margin: 0;
+  line-height: 1;
+  color: var(--nintendo-red);
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.specBox {
+  background: rgba(0,0,0,0.03);
+  padding: 1rem;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.specLabel {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.specValue {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-transform: capitalize;
+}
+
+.statsSection h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--poke-blue);
+}
+
+.statRow {
+  display: grid;
+  grid-template-columns: 120px 40px 1fr;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.statName {
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.statNumber {
+  text-align: right;
+  color: var(--foreground);
+}
+
+.statBarBg {
+  height: 10px;
+  background: rgba(0,0,0,0.05);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.statBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--poke-yellow), var(--nintendo-red));
+  border-radius: 5px;
+  transition: width 1s ease-out;
+}
+
+@media (max-width: 768px) {
+  .detailContainer {
+    grid-template-columns: 1fr;
+  }
+  .imageColumn {
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 2rem;
+  }
+  .infoColumn {
+    padding: 2rem;
+  }
+  .specsGrid {
+    grid-template-columns: 1fr;
+  }
+  .statRow {
+    grid-template-columns: 80px 30px 1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .bgCircle { background: #333; }
+  .specBox { background: rgba(255,255,255,0.05); }
+  .statName { color: #aaa; }
+  .statBarBg { background: rgba(255,255,255,0.1); }
+  .imageColumn { background: linear-gradient(135deg, rgba(230,0,18,0.1) 0%, rgba(59,76,202,0.1) 100%); }
+}
+
+.errorContainer {
+  text-align: center;
+  padding: 4rem;
+  background: var(--card-bg);
+  border-radius: 20px;
+}
+.errorContainer h2 { color: var(--nintendo-red); margin-bottom: 2rem; }
