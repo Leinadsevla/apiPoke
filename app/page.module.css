@@ -6,7 +6,7 @@
   text-align: center;
   margin-bottom: 3rem;
   padding: 2rem;
-  background: white;
+  background: var(--nintendo-red);
   border-radius: 20px;
   box-shadow: var(--card-shadow);
   border-top: 5px solid var(--nintendo-red);
@@ -19,12 +19,12 @@
 }
 
 .hero h2 span {
-  color: var(--nintendo-red);
+  color: var(--poke-blue);
 }
 
 .hero p {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--poke-yellow);
 }
 
 .grid {
@@ -34,12 +34,5 @@
   width: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  .hero {
-    background: #222;
-    color: #eee;
-  }
-  .hero p {
-    color: #bbb;
-  }
-}
+
+  
